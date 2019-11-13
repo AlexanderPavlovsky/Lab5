@@ -24,14 +24,14 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="save" mnemonicParsing="false" onAction="#save" text="Save" />
                   <MenuItem fx:id="open" mnemonicParsing="false" onAction="#load" text="Open" />
+              <MenuItem fx:id="save" mnemonicParsing="false" onAction="#save" text="Save" />
                   <MenuItem fx:id="openBackUp" mnemonicParsing="false" onAction="#loadBackUp" text="OpenBackUp" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#addPassenger" text="Add Passenger" />
                   <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>

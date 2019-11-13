@@ -2,6 +2,7 @@ package sample;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,16 +17,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.classes.BackUp;
 import sample.classes.Passenger;
 import sample.classes.Passengers;
 import sample.classes.Table;
+import sample.Main;
 
 import static sample.classes.FunUtils.*;
 
@@ -98,6 +104,22 @@ public class Controller {
     }
 
     @FXML
+    void addPassenger(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sample/addPassenger.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root,600, 400));
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.show();
+    }
+
+    @FXML
     private void save(ActionEvent event) {
         if (passengers.Size() != 0) {
             Stage stage = (Stage) myMenuBar.getScene().getWindow();
@@ -160,7 +182,7 @@ public class Controller {
     }
 
     @FXML
-   private void loadBackUp(ActionEvent event) {
+    private void loadBackUp(ActionEvent event) {
         Stage stage = (Stage) myMenuBar.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("JSON files (*.json)", "*.json");
