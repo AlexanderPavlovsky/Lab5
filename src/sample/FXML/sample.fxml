@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.сontrollers.Controller">
    <children>
       <TableView fx:id="tableInfoPassengers" layoutY="26.0" prefHeight="376.0" prefWidth="850.0">
         <columns>
@@ -32,12 +32,14 @@
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#addPassenger" text="Add Passenger" />
-                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="allMasses" mnemonicParsing="false" onAction="#allMasses" text="Baggage weight of all passengers" />
+                  <MenuItem mnemonicParsing="false" onAction="#removeByLastName" text="Remove passenger by last name" />
+                  <MenuItem mnemonicParsing="false" onAction="#locationOfBaggage" text="Location of baggage" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="about" mnemonicParsing="false" onAction="#about" text="About" />
             </items>
           </Menu>
         </menus>

@@ -21,7 +21,7 @@ public class Passengers implements Serializable {
     }
 
 
-    public Passengers(ArrayList<Passenger> passengers) {
+    public Passengers(final ArrayList<Passenger> passengers) {
         this.passengers = passengers;
     }
 
@@ -69,7 +69,7 @@ public class Passengers implements Serializable {
      * @return number flight
      */
     public String locationOfBaggage(final String numberBaggage) {
-        String result = "";
+        String result = null;
         for (final Passenger passenger : passengers) {
             if (passenger.getNumberBaggage().equals(numberBaggage)) {
                 result = "Number Flight: " + passenger.getNumberFlight();
@@ -108,7 +108,7 @@ public class Passengers implements Serializable {
         return passengers.size();
     }
 
-    public Passenger getPassenger(int index){
+    public Passenger getPassenger(final int index){
         return passengers.get(index);
     }
 

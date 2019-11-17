@@ -13,7 +13,7 @@ public class Table {
     private final SimpleIntegerProperty passengerQuantityPlace;
     private final SimpleIntegerProperty passengerAllMassOfBaggage;
 
-    public Table(Passenger passenger) {
+    public Table(final Passenger passenger) {
         this.passengerFullName = new SimpleStringProperty(passenger.getLastName() + " " + passenger.getName() + " " + passenger.getPatronymic());
         this.passengerNumberFlight = new SimpleStringProperty(passenger.getNumberFlight());
         this.passengerLevelOfPlace = new SimpleStringProperty(passenger.getLevelOfPlace());
@@ -32,7 +32,7 @@ public class Table {
         return passengerFullName;
     }
 
-    public void setPassengerFullName(String passengerFullName) {
+    public void setPassengerFullName(final String passengerFullName) {
         this.passengerFullName.set(passengerFullName);
     }
 
@@ -44,7 +44,7 @@ public class Table {
         return passengerNumberFlight;
     }
 
-    public void setPassengerNumberFlight(String passengerNumberFlight) {
+    public void setPassengerNumberFlight(final String passengerNumberFlight) {
         this.passengerNumberFlight.set(passengerNumberFlight);
     }
 
@@ -56,7 +56,7 @@ public class Table {
         return passengerLevelOfPlace;
     }
 
-    public void setPassengerLevelOfPlace(String passengerLevelOfPlace) {
+    public void setPassengerLevelOfPlace(final String passengerLevelOfPlace) {
         this.passengerLevelOfPlace.set(passengerLevelOfPlace);
     }
 
@@ -68,7 +68,7 @@ public class Table {
         return passengerNumberBaggage;
     }
 
-    public void setPassengerNumberBaggage(String passengerNumberBaggage) {
+    public void setPassengerNumberBaggage(final String passengerNumberBaggage) {
         this.passengerNumberBaggage.set(passengerNumberBaggage);
     }
 
@@ -80,7 +80,7 @@ public class Table {
         return passengerLevelOfBaggage;
     }
 
-    public void setPassengerLevelOfBaggage(String passengerLevelOfBaggage) {
+    public void setPassengerLevelOfBaggage(final String passengerLevelOfBaggage) {
         this.passengerLevelOfBaggage.set(passengerLevelOfBaggage);
     }
 
@@ -92,7 +92,7 @@ public class Table {
         return passengerQuantityPlace;
     }
 
-    public void setPassengerQuantityPlace(int passengerQuantityPlace) {
+    public void setPassengerQuantityPlace(final int passengerQuantityPlace) {
         this.passengerQuantityPlace.set(passengerQuantityPlace);
     }
 
@@ -104,7 +104,7 @@ public class Table {
         return passengerAllMassOfBaggage;
     }
 
-    public void setPassengerAllMassOfBaggage(int passengerAllMassOfBaggage) {
+    public void setPassengerAllMassOfBaggage(final int passengerAllMassOfBaggage) {
         this.passengerAllMassOfBaggage.set(passengerAllMassOfBaggage);
     }
 }
