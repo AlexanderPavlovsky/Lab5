@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.TimerTask;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -86,7 +87,8 @@ public class Controller {
         passengerLevelOfBaggage.setCellValueFactory(new PropertyValueFactory<Table, String>("passengerLevelOfBaggage"));
         passengerQuantityPlace.setCellValueFactory(new PropertyValueFactory<Table, Integer>("passengerQuantityPlace"));
         passengerAllMassOfBaggage.setCellValueFactory(new PropertyValueFactory<Table, Integer>("passengerAllMassOfBaggage"));
-        backUp.start();
+        BackUp backUp = new BackUp();
+        backUp.run();
     }
 
     @FXML
@@ -124,10 +126,6 @@ public class Controller {
                 alert.setContentText("Number baggage doesn't exist.");
             }
             alert.show();
-        } else {
-            final Alert alert = new Alert(AlertType.WARNING);
-            alert.setContentText("String is empty");
-            alert.show();
         }
     }
 
@@ -146,10 +144,7 @@ public class Controller {
             alert.show();
             data.clear();
             creatTable();
-        } else {
-            stringEmpty();
         }
-
     }
 
     @FXML
@@ -160,12 +155,11 @@ public class Controller {
             alert.setContentText(passengers.allMassOfBaggage());
             alert.show();
         }
-    }
-
-    public void stringEmpty() {
-        final Alert alert = new Alert(AlertType.WARNING);
-        alert.setContentText("String is empty");
-        alert.show();
+        else {
+            final Alert alert = new Alert(AlertType.WARNING);
+            alert.setContentText("List is empty");
+            alert.show();
+        }
     }
 
     @FXML

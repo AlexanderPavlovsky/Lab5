@@ -7,15 +7,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="140.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.сontrollers.ControllerLocationOfBaggage">
+<AnchorPane prefHeight="140.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.сontrollers.ControllerLocationOfBaggage">
    <children>
-      <TextField fx:id="numberBaggageTextField" layoutX="134.0" layoutY="51.0" />
-      <Text layoutX="56.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search location of baggage">
+      <TextField fx:id="numberBaggageTextField" layoutX="137.0" layoutY="51.0" />
+      <Text layoutX="65.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search location of baggage">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Label layoutX="16.0" layoutY="54.0" text="Number baggage">
+      <Label layoutX="21.0" layoutY="54.0" text="Number baggage">
          <font>
             <Font size="14.0" />
          </font>
@@ -25,7 +25,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="157.0" layoutY="88.0" mnemonicParsing="false" onAction="#closeScene" text="Cancel">
+      <Button fx:id="cancelButton" layoutX="158.0" layoutY="88.0" mnemonicParsing="false" onAction="#closeScene" text="Cancel">
          <font>
             <Font size="14.0" />
          </font>

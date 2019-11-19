@@ -3,20 +3,21 @@ package sample.classes;
 
 import sample.сontrollers.Controller;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  * Class BackUp
  */
-public class BackUp extends Thread {
+public class BackUp extends TimerTask {
+
+    private Timer timer = new Timer();
 
     @Override
     public void run() {
-        try {
-            while (true) {
-                Thread.sleep(1000);
-                Controller.backUp();
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        timer.schedule(new BackUp(), 300000);
+        Controller.backUp();
+
     }
 }
+
