@@ -83,7 +83,6 @@ public class Passenger implements Serializable {
      * Default construct of Passenger class
      */
     public Passenger() {
-
     }
 
     /**
